@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     
 
-    const div1lists = document.querySelectorAll('#div1');
-    console.log(div1lists);
-    for(let i = 1; i < div1lists.length; i++){
-        const lists = div1lists[i].querySelectorAll('li');
+    const div1Lists = document.querySelectorAll('#div1');
+    console.log(div1Lists);
+    for(let i = 1; i < div1Lists.length; i++){
+        const lists = div1Lists[i].querySelectorAll('li');
         console.log(lists);
         for(let j = 0; j < lists.length; j++){
             lists[j].style.color = 'rgb(68, 65, 65)';
@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    const div2lists = document.querySelectorAll('#div2');
-    console.log(div2lists);
-    for(let i = 1; i < div2lists.length; i++){
-        const lists = div2lists[i].querySelectorAll('li');
+    const div2Lists = document.querySelectorAll('#div2');
+    console.log(div2Lists);
+    for(let i = 1; i < div2Lists.length; i++){
+        const lists = div2Lists[i].querySelectorAll('li');
         console.log(lists);
         for(let j = 0; j < lists.length; j++){
             lists[j].style.color = 'white';
