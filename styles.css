@@ -53,9 +53,10 @@
 
 #nametag{
     display: flex;
+    flex-direction: column;
     background-color: white;
-    width: 30%;
-    height: 50vh;
+    width: 50%;
+    height: 300px;
     text-align: center;
     justify-content: center;
     align-items: center;
