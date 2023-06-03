@@ -16,25 +16,36 @@ document.addEventListener('DOMContentLoaded', function () {
         
     })
     
+    let countEx = 0;
+    let countSk = 0;
 
     const div1Lists = document.querySelectorAll('#div1');
     console.log(div1Lists);
+    
     for(let i = 1; i < div1Lists.length; i++){
         const lists = div1Lists[i].querySelectorAll('p');
         console.log(lists);
         for(let j = 0; j < lists.length; j++){
+            console.log(countEx);
+            
             lists[j].style.color = 'rgb(68, 65, 65)';
+           
             window.addEventListener('scroll', ()=>{
+                countEx++;
+                if(countEx <= lists.length){
                 console.log('scroll');
                 lists[j].style.color = 'white';
                 lists[j].className = 'typed';
                 lists[j].addEventListener('animationend', ()=>{
-                    array[i].className="";
+                    lists[j].className="";
                 })
+            }
             })
-    
+            
         }
+        
     }
+    
 
     const div2Lists = document.querySelectorAll('#div2');
     console.log(div2Lists);
@@ -43,13 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(lists);
         for(let j = 0; j < lists.length; j++){
             lists[j].style.color = 'white';
+            
             lists[j].addEventListener('mouseover', ()=>{
+                if(countSk < lists.length){
                 lists[j].style.color = 'black';
                 lists[j].className = 'typed';
                 lists[j].addEventListener('animationend', ()=>{
-                    array[i].className="";
+                    countSk++;
+                    
                 })
-
+                }
             })
         }
     }
