@@ -3,19 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('#nametag').addEventListener('click', ()=>{
         document.querySelector('#openpage').className = 'fade';
-    document.querySelector('#openpage').addEventListener('animationend',()=>{
-
-        document.querySelector('#page-container').style.display = 'block';
-        document.querySelector('#page-container').className = 'fadein';
-        document.querySelector('#openpage').style.display = 'none';
-
-    })
-
+        document.querySelector('#openpage').addEventListener('animationend',()=>{
+            document.querySelector('#page-container').style.display = 'block';
+            document.querySelector('#page-container').className = 'fadein';
+            document.querySelector('#openpage').style.display = 'none';
+        })
     })
 
     document.querySelector('#sub-heading').addEventListener('animationend',()=>{
-        const info = document.querySelectorAll("h4");
-        
+        const info = document.querySelectorAll(".info p");
         statement(info, 0);
         
     })
@@ -24,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const div1Lists = document.querySelectorAll('#div1');
     console.log(div1Lists);
     for(let i = 1; i < div1Lists.length; i++){
-        const lists = div1Lists[i].querySelectorAll('li');
+        const lists = div1Lists[i].querySelectorAll('p');
         console.log(lists);
         for(let j = 0; j < lists.length; j++){
             lists[j].style.color = 'rgb(68, 65, 65)';
@@ -32,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('scroll');
                 lists[j].style.color = 'white';
                 lists[j].className = 'typed';
+                lists[j].addEventListener('animationend', ()=>{
+                    array[i].className="";
+                })
             })
     
         }
@@ -47,8 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
             lists[j].addEventListener('mouseover', ()=>{
                 lists[j].style.color = 'black';
                 lists[j].className = 'typed';
+                lists[j].addEventListener('animationend', ()=>{
+                    array[i].className="";
+                })
+
             })
-    
         }
     }
 
@@ -57,9 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const lists = array[i].querySelectorAll('li');
             console.log(lists);
             for(let j = 0; j < lists.length; j++){
+                for(let k = 0; k < lists[j].length; k++){
                 lists[j].style.color = 'rgb(68, 65, 65)';
                 lists[j].style.color = 'white';
                 lists[j].className = 'typed';
+                }
             }
         }
     }
@@ -70,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else{
             array[i].style.color = 'black';
-            array[i].className = 'info typed';
+            array[i].className = 'info fadein';
             array[i].addEventListener('animationend', ()=>{
             array[i].className="";
             i++;
